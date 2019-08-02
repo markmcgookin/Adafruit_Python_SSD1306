@@ -98,7 +98,7 @@ x = 0
 
 # Load default font.
 font = ImageFont.load_default()
-
+bigFont = ImageFont.truetype("droid.ttf", 15)
 # Alternatively load a TTF font.  Make sure the .ttf font file is in the same directory as the python script!
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 # font = ImageFont.truetype('Minecraftia.ttf', 8)
@@ -124,7 +124,7 @@ while True:
     draw.text((x, top+8),     str(CPU), font=font, fill=255)
     draw.text((x, top+16),    str(MemUsage),  font=font, fill=255)
     draw.text((x, top+25),    str(Disk),  font=font, fill=255)
-    draw.text((x, top+33),    str(Time),  font=font, fill=255)
+    draw.text((x, top+33),    str(Time),  font=bigFont, fill=255)
 
     # Display image.
     disp.image(image)
