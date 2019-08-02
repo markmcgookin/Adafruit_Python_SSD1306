@@ -131,7 +131,6 @@ while True:
     #Date = strftime("%d-%m-%Y", gmtime())
 
     f=codecs.open(filename=path, mode="r", encoding='utf-8')
-    if f.mode == 'r':
         contents = f.read()
         f.close()
 
