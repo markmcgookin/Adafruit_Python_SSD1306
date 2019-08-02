@@ -135,19 +135,21 @@ while True:
         f.close
 
         split = re.split(r'\t+', contents.rstrip('\t'))
-        IP = split[0]
-        CPU = split[1]
-        MEM = split[2]
-        DISK = split[3]
-        DATE = split[4]
-        TIME = split[5]
 
-        draw.text((0, top),       "IP: " + str(IP),  font=font, fill=255)
-        draw.text((0, top+8),     str(CPU), font=font, fill=255)
-        draw.text((0, top+16),    str(MEM),  font=font, fill=255)
-        draw.text((0, top+25),    str(DISK),  font=font, fill=255)
-        draw.text((0, top+33),    "DATE: " + str(DATE),  font=font, fill=255)
-        draw.text((2, top+43),    str(TIME),  font=bigFont, fill=255)
+        if split.count > 0:
+            IP = split[0]
+            CPU = split[1]
+            MEM = split[2]
+            DISK = split[3]
+            DATE = split[4]
+            TIME = split[5]
+
+            draw.text((0, top),       "IP: " + str(IP),  font=font, fill=255)
+            draw.text((0, top+8),     str(CPU), font=font, fill=255)
+            draw.text((0, top+16),    str(MEM),  font=font, fill=255)
+            draw.text((0, top+25),    str(DISK),  font=font, fill=255)
+            draw.text((0, top+33),    "DATE: " + str(DATE),  font=font, fill=255)
+            draw.text((2, top+43),    str(TIME),  font=bigFont, fill=255)
 
     # Display image.
     disp.image(image)
