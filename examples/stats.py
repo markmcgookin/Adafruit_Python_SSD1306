@@ -94,18 +94,18 @@ top = padding
 bottom = height-padding
 # Move left to right keeping track of the current x position for drawing shapes.
 x = 0
-
+bigFontSize = 32
 
 # Load default font.
 font = ImageFont.load_default()
-bigFont = ImageFont.truetype('GothamBook.ttf', 24)
+bigFont = ImageFont.truetype('GothamBook.ttf', bigFontSize)
 # Alternatively load a TTF font.  Make sure the .ttf font file is in the same directory as the python script!
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 # font = ImageFont.truetype('Minecraftia.ttf', 8)
 
 
 # Set animation and sine wave parameters.
-velocity = -2
+velocity = -4
 startpos = width
 
 # Animate text moving in sine wave.
@@ -131,7 +131,7 @@ while True:
     maxwidth, unused = draw.textsize(Time, font=bigFont)
 
     # Clear image buffer by drawing a black filled box.
-    draw.rectangle((0,top+38,width,24), outline=0, fill=0)
+    draw.rectangle((0,top+38,width,bigFontSize), outline=0, fill=0)
     # Enumerate characters and draw them offset vertically based on a sine wave.
     x = pos
     for i, c in enumerate(Time):
