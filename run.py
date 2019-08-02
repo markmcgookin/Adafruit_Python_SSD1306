@@ -30,6 +30,7 @@ from time import gmtime, strftime
 
 import re
 import subprocess
+import sys
 
 # Raspberry Pi pin configuration:
 RST = None     # on the PiOLED this pin isnt used
@@ -124,7 +125,11 @@ while True:
     #Date = strftime("%d-%m-%Y", gmtime())
 
     contents = ""
-    f=open("info.dat", "r")
+    path = "info.dat"
+    if sys.argv.count > 0:
+        path=sys.argv[0]
+
+    f=open(path, "r")
     if f.mode == 'r':
         contents = f.read()
         f.close
