@@ -128,7 +128,7 @@ while True:
     draw.text((0, top+25),    str(Disk),  font=font, fill=255)
     draw.text((0, top+33),    str(Date),  font=font, fill=255)
 
-    draw.text((4, top+45),    str(Time),  font=bigFont, fill=255)
+    draw.text((4, top+45),    str(Time),  font=bigFont, fill=128)
 
     # Display image.
     disp.image(image)
