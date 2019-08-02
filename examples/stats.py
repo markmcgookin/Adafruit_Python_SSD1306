@@ -126,7 +126,7 @@ while True:
     draw.text((0, top+8),     str(CPU), font=font, fill=255)
     draw.text((0, top+16),    str(MemUsage),  font=font, fill=255)
     draw.text((0, top+25),    str(Disk),  font=font, fill=255)
-    draw.text((0, top+33),    str(Date),  font=font, fill=255)
+    draw.text((0, top+33),    "DATE: " + str(Date),  font=font, fill=255)
     draw.text((4, top+43),    str(Time),  font=bigFont, fill=255)
 
     # Display image.
