@@ -127,7 +127,7 @@ while True:
     #Time = strftime("%H:%M:%S", gmtime())
     #Date = strftime("%d-%m-%Y", gmtime())
 
-    f=open(filename=path, mode="r", encoding='utf-8')
+    f=open(name=path, mode="r", encoding='utf-8')
     contents = f.read()
     f.close()
 
