@@ -137,7 +137,7 @@ while True:
         split = re.split(r'\t+', contents.rstrip('\t'))
 
         if split.count > 0:
-            IP = split[0]
+            IP = split[0].strip()
             CPU = split[1]
             MEM = split[2]
             DISK = split[3]
