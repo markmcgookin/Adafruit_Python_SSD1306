@@ -94,7 +94,7 @@ top = padding
 bottom = height-padding
 # Move left to right keeping track of the current x position for drawing shapes.
 x = 0
-bigFontSize = 22
+bigFontSize = 24
 
 # Load default font.
 font = ImageFont.load_default()
@@ -128,7 +128,7 @@ while True:
     draw.text((0, top+25),    str(Disk),  font=font, fill=255)
     draw.text((0, top+33),    str(Date),  font=font, fill=255)
     draw.text((0, top+33),    str(Date),  font=font, fill=255)
-    draw.text((x, top+43),    str(Time),  font=bigFont, fill=255)
+    draw.text((x, top+44),    str(Time),  font=bigFont, fill=255)
 
     # Display image.
     disp.image(image)
