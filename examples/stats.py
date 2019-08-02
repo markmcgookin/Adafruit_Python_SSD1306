@@ -103,6 +103,14 @@ bigFont = ImageFont.truetype('GothamBook.ttf', 24)
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 # font = ImageFont.truetype('Minecraftia.ttf', 8)
 
+
+# Set animation and sine wave parameters.
+velocity = -2
+startpos = width
+
+# Animate text moving in sine wave.
+print('Press Ctrl-C to quit.')
+pos = startpos
 while True:
 
     # Draw a black filled box to clear the image.
@@ -124,7 +132,40 @@ while True:
     draw.text((x, top+8),     str(CPU), font=font, fill=255)
     draw.text((x, top+16),    str(MemUsage),  font=font, fill=255)
     draw.text((x, top+25),    str(Disk),  font=font, fill=255)
-    draw.text((x, top+35),    str(Time),  font=bigFont, fill=255)
+    maxwidth = draw.textsize(Time, font=font)
+
+
+    # Clear image buffer by drawing a black filled box.
+    draw.rectangle((0,top+38,width,24), outline=0, fill=0)
+    # Enumerate characters and draw them offset vertically based on a sine wave.
+    x = pos
+    for i, c in enumerate(Time):
+        # Stop drawing if off the right side of screen.
+        if x > width:
+            break
+        # Calculate width but skip drawing if off the left side of screen.
+        if x < -10:
+            char_width, char_height = draw.textsize(c, font=bigFont)
+            x += char_width
+            continue
+        # Calculate offset from sine wave.
+        y = top+38
+        # Draw text.
+        draw.text((x, y), c, font=bigFont, fill=255)
+        # Increment x position based on chacacter width.
+        char_width, char_height = draw.textsize(c, font=bigFont)
+        x += char_width
+
+    # Move position for next frame.
+    pos += velocity
+    # Start over if text has scrolled completely off left side of screen.
+    if pos < -maxwidth:
+        pos = startpos
+    # Pause briefly before drawing next frame.
+    time.sleep(0.1)
+
+
+    #draw.text((x, top+38),    str(Time),  font=bigFont, fill=255)
 
     # Display image.
     disp.image(image)
