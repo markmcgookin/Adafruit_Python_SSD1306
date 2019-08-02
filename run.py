@@ -126,7 +126,7 @@ while True:
 
     contents = ""
     path = "info.dat"
-    if sys.argv.count > 0:
+    if sys.argv.count > 1:
         path=sys.argv[1]
 
     f=open(path, "r")
