@@ -82,7 +82,7 @@ draw = ImageDraw.Draw(image)
 
 # Define text and get total width.
 #text = 'SSD1306 ORGANIC LED DISPLAY. THIS IS AN OLD SCHOOL DEMO SCROLLER!! GREETZ TO: LADYADA & THE ADAFRUIT CREW, TRIXTER, FUTURE CREW, AND FARBRAUSCH'
-maxwidth, unused = draw.textsize(text, font=font)
+
 
 # Set animation and sine wave parameters.
 amplitude = height/4
@@ -99,6 +99,8 @@ while True:
     if f.mode == 'r':
         text = f.read()
     f.close()
+    
+    maxwidth, unused = draw.textsize(text, font=font)
 
     # Clear image buffer by drawing a black filled box.
     draw.rectangle((0,0,width,height), outline=0, fill=0)
