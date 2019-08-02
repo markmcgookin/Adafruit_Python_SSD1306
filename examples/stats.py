@@ -94,7 +94,7 @@ top = padding
 bottom = height-padding
 # Move left to right keeping track of the current x position for drawing shapes.
 x = 0
-bigFontSize = 32
+bigFontSize = 30
 
 # Load default font.
 font = ImageFont.load_default()
