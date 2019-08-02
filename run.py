@@ -106,8 +106,6 @@ bigFont = ImageFont.truetype('GothamBook.ttf', bigFontSize)
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 # font = ImageFont.truetype('Minecraftia.ttf', 8)
 
-
-contents = ""
 path = "info.dat"
 if len(sys.argv) > 1:
     path=sys.argv[1]
@@ -131,25 +129,25 @@ while True:
     #Date = strftime("%d-%m-%Y", gmtime())
 
     f=codecs.open(filename=path, mode="r", encoding='utf-8')
-        contents = f.read()
-        f.close()
+    contents = f.read()
+    f.close()
 
-        split = re.split(r'\t+', contents.strip('\t'))
+    split = re.split(r'\t+', contents.strip('\t'))
 
-        if split.count > 0:
-            IP = split[0]
-            CPU = split[1]
-            MEM = split[2]
-            DISK = split[3]
-            DATE = split[4]
-            TIME = split[5]
+    if split.count > 0:
+        IP = split[0]
+        CPU = split[1]
+        MEM = split[2]
+        DISK = split[3]
+        DATE = split[4]
+        TIME = split[5]
 
-            draw.text((0, top),       "IP:" + str(IP),  font=font, fill=255)
-            draw.text((0, top+8),     "CPU:" + str(CPU), font=font, fill=255)
-            draw.text((0, top+16),    "MEM:" + str(MEM),  font=font, fill=255)
-            draw.text((0, top+25),    "DISK:" + str(DISK),  font=font, fill=255)
-            draw.text((0, top+33),    "DATE:" + str(DATE),  font=font, fill=255)
-            draw.text((2, top+43),    str(TIME),  font=bigFont, fill=255)
+        draw.text((0, top),       "IP:" + str(IP),  font=font, fill=255)
+        draw.text((0, top+8),     "CPU:" + str(CPU), font=font, fill=255)
+        draw.text((0, top+16),    "MEM:" + str(MEM),  font=font, fill=255)
+        draw.text((0, top+25),    "DISK:" + str(DISK),  font=font, fill=255)
+        draw.text((0, top+33),    "DATE:" + str(DATE),  font=font, fill=255)
+        draw.text((2, top+43),    str(TIME),  font=bigFont, fill=255)
     
     # Display image.
     disp.image(image)
