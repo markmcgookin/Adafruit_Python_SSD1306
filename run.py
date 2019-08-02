@@ -134,6 +134,8 @@ while True:
         contents = f.read()
         f.close
 
+        print(contents)
+
         split = re.split(r'\t+', contents.rstrip('\t'))
 
         if split.count > 0:
