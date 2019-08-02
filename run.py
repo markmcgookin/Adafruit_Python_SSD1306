@@ -132,7 +132,7 @@ while True:
     f=open(path, "r")
     if f.mode == 'r':
         contents = f.read()
-        print("reading")
+        print(contents)
         f.close
 
         split = re.split(r'\t+', contents.rstrip('\t'))
