@@ -127,8 +127,11 @@ while True:
     draw.text((0, top+16),    str(MemUsage),  font=font, fill=255)
     draw.text((0, top+25),    str(Disk),  font=font, fill=255)
     draw.text((0, top+33),    str(Date),  font=font, fill=255)
-    draw.text((0, top+33),    str(Date),  font=font, fill=255)
-    draw.text((x, top+44),    str(Time),  font=bigFont, fill=255)
+
+    textWidth, unused = draw.textsize(Time, font=bigFont)
+    x = (width - textWidth) / 2
+
+    draw.text((x, top+45),    str(Time),  font=bigFont, fill=255)
 
     # Display image.
     disp.image(image)
