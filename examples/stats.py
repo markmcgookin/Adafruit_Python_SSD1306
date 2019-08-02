@@ -94,7 +94,7 @@ top = padding
 bottom = height-padding
 # Move left to right keeping track of the current x position for drawing shapes.
 x = 0
-bigFontSize = 32
+bigFontSize = 36
 
 # Load default font.
 font = ImageFont.load_default()
@@ -105,7 +105,7 @@ bigFont = ImageFont.truetype('GothamBook.ttf', bigFontSize)
 
 
 # Set animation and sine wave parameters.
-velocity = -4
+velocity = -6
 startpos = width
 
 # Animate text moving in sine wave.
