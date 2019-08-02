@@ -31,6 +31,7 @@ from time import gmtime, strftime
 import re
 import subprocess
 import sys
+import codecs
 
 # Raspberry Pi pin configuration:
 RST = None     # on the PiOLED this pin isnt used
@@ -129,7 +130,7 @@ while True:
     #Time = strftime("%H:%M:%S", gmtime())
     #Date = strftime("%d-%m-%Y", gmtime())
 
-    f=open(path, "r", encoding='utf-8')
+    f=codecs.open(filename=path, mode="r", encoding='utf-8')
     if f.mode == 'r':
         contents = f.read()
         f.close()
