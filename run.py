@@ -134,10 +134,10 @@ while True:
         contents = f.read()
         f.close()
 
-        split = re.split(r'\t+', contents.rstrip('\t'))
+        split = re.split(r'\t+', contents.strip('\t'))
 
         if split.count > 0:
-            IP = split[0].strip()
+            IP = split[0]
             CPU = split[1]
             MEM = split[2]
             DISK = split[3]
