@@ -129,7 +129,7 @@ while True:
     #Time = strftime("%H:%M:%S", gmtime())
     #Date = strftime("%d-%m-%Y", gmtime())
 
-    f=open(path, "r", 0)
+    f=open(path, "r", encoding='utf-8')
     if f.mode == 'r':
         contents = f.read()
         f.close()
