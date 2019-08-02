@@ -128,11 +128,6 @@ while True:
     Time = strftime("%d-%m-%Y %H:%M:%S", gmtime())
     # Write two lines of text.
 
-    draw.text((x, top),       "IP: " + str(IP),  font=font, fill=255)
-    draw.text((x, top+8),     str(CPU), font=font, fill=255)
-    draw.text((x, top+16),    str(MemUsage),  font=font, fill=255)
-    draw.text((x, top+25),    str(Disk),  font=font, fill=255)
-
     maxwidth, unused = draw.textsize(Time, font=bigFont)
 
     # Clear image buffer by drawing a black filled box.
@@ -140,6 +135,13 @@ while True:
     # Enumerate characters and draw them offset vertically based on a sine wave.
     x = pos
     for i, c in enumerate(Time):
+
+        #Redraw the original stats
+        draw.text((0, top),       "IP: " + str(IP),  font=font, fill=255)
+        draw.text((0, top+8),     str(CPU), font=font, fill=255)
+        draw.text((0, top+16),    str(MemUsage),  font=font, fill=255)
+        draw.text((0, top+25),    str(Disk),  font=font, fill=255)
+
         # Stop drawing if off the right side of screen.
         if x > width:
             break
