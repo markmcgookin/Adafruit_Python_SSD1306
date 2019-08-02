@@ -134,8 +134,6 @@ while True:
         contents = f.read()
         f.close
 
-        print(contents)
-
         split = re.split(r'\t+', contents.rstrip('\t'))
 
         if split.count > 0:
@@ -156,4 +154,4 @@ while True:
     # Display image.
     disp.image(image)
     disp.display()
-    time.sleep(.1)
+    time.sleep(1)
