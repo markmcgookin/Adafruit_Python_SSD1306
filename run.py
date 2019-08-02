@@ -81,7 +81,7 @@ font = ImageFont.load_default()
 draw = ImageDraw.Draw(image)
 
 # Define text and get total width.
-text = 'SSD1306 ORGANIC LED DISPLAY. THIS IS AN OLD SCHOOL DEMO SCROLLER!! GREETZ TO: LADYADA & THE ADAFRUIT CREW, TRIXTER, FUTURE CREW, AND FARBRAUSCH'
+#text = 'SSD1306 ORGANIC LED DISPLAY. THIS IS AN OLD SCHOOL DEMO SCROLLER!! GREETZ TO: LADYADA & THE ADAFRUIT CREW, TRIXTER, FUTURE CREW, AND FARBRAUSCH'
 maxwidth, unused = draw.textsize(text, font=font)
 
 # Set animation and sine wave parameters.
@@ -94,6 +94,12 @@ startpos = width
 print('Press Ctrl-C to quit.')
 pos = startpos
 while True:
+
+    f=open("display.dat", "r")
+    if f.mode == 'r':
+        text = f.read()
+    f.close()
+
     # Clear image buffer by drawing a black filled box.
     draw.rectangle((0,0,width,height), outline=0, fill=0)
     # Enumerate characters and draw them offset vertically based on a sine wave.
