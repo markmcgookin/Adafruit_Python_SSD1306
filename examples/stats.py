@@ -132,8 +132,8 @@ while True:
     draw.text((x, top+8),     str(CPU), font=font, fill=255)
     draw.text((x, top+16),    str(MemUsage),  font=font, fill=255)
     draw.text((x, top+25),    str(Disk),  font=font, fill=255)
-    maxwidth = draw.textsize(Time, font=font)
 
+    maxwidth, unused = draw.textsize(Time, font=bigFont)
 
     # Clear image buffer by drawing a black filled box.
     draw.rectangle((0,top+38,width,24), outline=0, fill=0)
