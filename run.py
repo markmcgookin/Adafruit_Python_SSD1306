@@ -126,6 +126,7 @@ while True:
 
     contents = ""
     path = "info.dat"
+    print (sys.argv.count)
     if sys.argv.count > 1:
         path=sys.argv[1]
 
