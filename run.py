@@ -147,7 +147,7 @@ while True:
         draw.text((0, top+16),    "MEM:" + str(MEM),  font=font, fill=255)
         draw.text((0, top+25),    "DISK:" + str(DISK),  font=font, fill=255)
         draw.text((0, top+33),    "DATE:" + str(DATE),  font=font, fill=255)
-        draw.text((2, top+43),    str(TIME),  font=bigFont, fill=255)
+        draw.text((0, top+43),    str(TIME),  font=bigFont, fill=255)
     
     # Display image.
     disp.image(image)
