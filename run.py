@@ -105,7 +105,12 @@ bigFont = ImageFont.truetype('GothamBook.ttf', bigFontSize)
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 # font = ImageFont.truetype('Minecraftia.ttf', 8)
 
-# Animate text moving in sine wave.
+
+contents = ""
+path = "info.dat"
+if len(sys.argv) > 1:
+    path=sys.argv[1]
+
 print('Press Ctrl-C to quit.')
 while True:
 
@@ -123,11 +128,6 @@ while True:
     #Disk = subprocess.check_output(cmd, shell = True )
     #Time = strftime("%H:%M:%S", gmtime())
     #Date = strftime("%d-%m-%Y", gmtime())
-
-    contents = ""
-    path = "info.dat"
-    if len(sys.argv) > 1:
-        path=sys.argv[1]
 
     f=open(path, "r")
     if f.mode == 'r':
