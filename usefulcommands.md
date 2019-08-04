@@ -29,16 +29,18 @@ docker rm $(docker ps -aq)
 
 docker rmi $(docker images -q)
 
-## Login to private repo ##
-
-az acr login --name brightpay
 
 ## Run local version ## 
-sudo docker run --net=host --env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" contact-ui:latest
+sudo docker run status-display:latest
 
-#Need to add the container reg ot this 
-#sudo docker run --net=host --env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" contact-ui:latest
+## Run from private repo ##
+docker run dockerregistry.local:5000/markmcgookin/status-display:latest
 
- -- Run using bash as entry point
-docker run --entrypoint /bin/bash -it contact-ui
+## Run using bash as entry point
+docker run --entrypoint /bin/bash -it status-display
 
+## List containers on private registry
+curl -X GET http://dockerregistry.local:5000/v2/_catalog
+
+## List tags for repo on private registry
+curl -X GET http://dockerregistry.local:5000/v2/status-display/tags/list
