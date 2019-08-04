@@ -1,4 +1,4 @@
-FROM python:2.7.16-slim-buster
+FROM arm32v6/python:2.7.16-slim-buster
 
 WORKDIR /app
 
