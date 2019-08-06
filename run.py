@@ -149,8 +149,8 @@ while True:
             draw.text((0, top+25),    "DISK:" + str(DISK),  font=font, fill=255)
             draw.text((0, top+33),    "DATE:" + str(DATE),  font=font, fill=255)
             draw.text((0, top+43),    str(TIME),  font=bigFont, fill=255)
-    except:
-        print("An exception occurred")
+    except Exception, e:
+        print("An exception occurred: " + str(e))
         draw.text((0, top),      "Cannot read file",  font=font, fill=255)
         
     # Display image.
