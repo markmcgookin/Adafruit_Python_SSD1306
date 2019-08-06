@@ -151,6 +151,7 @@ while True:
             draw.text((0, top+43),    str(TIME),  font=bigFont, fill=255)
     except:
         print("An exception occurred")
+        draw.text((0, top),      "Cannot read file",  font=font, fill=255)
         
     # Display image.
     disp.image(image)
