@@ -1,6 +1,3 @@
-#Run this on the local machine to pull the latest version, run it, expose the folder for data and gpio pins
-
-#Copy and run this command to run the container but attached
-#docker run --name status-display --device /dev/gpiomem -it -v ~/data:/media/blackbox dockerregistry.local:5000/markmcgookin/status-display:latest
-
-docker run --name status-display --device /dev/gpiomem -d -v ~/data:/media/blackbox dockerregistry.local:5000/markmcgookin/status-display:latest
+mount -a
+docker pull dockerregistry.local:5000/markmcgookin/status-display:latest
+docker run --name status-display --privileged -d --mount type=bind,src=/media/blackbox,target=/data dockerregistry.local:5000/markmcgookin/status-display:latest
