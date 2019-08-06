@@ -10,4 +10,4 @@ WORKDIR /app
 COPY run.py .
 COPY *.ttf ./
 
-CMD [ "python", "./run.py", "~/data/info.dat"]
+CMD [ "python", "./run.py", "/data/info.dat"]
